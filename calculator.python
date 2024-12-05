@@ -1,45 +1,25 @@
-
-def add(x, y):
-    return x + y
-
-
-def subtract(x, y):
-    return x - y
-
-
-def multiply(x, y):
-    return x * y
-
-def divide(x, y):
-    if y != 0:
-        return x / y
-    else:
-        return "Error! Division by zero."
-
-
-def calculator():
+def calculator()
+    num1 = float(input("Enter the first number: "))
+    num2 = float(input("Enter the second number: "))
     print("Select operation:")
-    print("1. Add")
-    print("2. Subtract")
-    print("3. Multiply")
-    print("4. Divide")
-
-    choice = input("Enter choice (1/2/3/4): ")
-
-    
-    num1 = float(input("Enter first number: "))
-    num2 = float(input("Enter second number: "))
-
-    if choice == '1':
-        print(f"{num1} + {num2} = {add(num1, num2)}")
-    elif choice == '2':
-        print(f"{num1} - {num2} = {subtract(num1, num2)}")
-    elif choice == '3':
-        print(f"{num1} * {num2} = {multiply(num1, num2)}")
-    elif choice == '4':
-        print(f"{num1} / {num2} = {divide(num1, num2)}")
+    print("1. Add (+)")
+    print("2. Subtract (-)")
+    print("3. Multiply (*)")
+    print("4. Divide (/)")
+    operation = input("Enter the operation (1/2/3/4): ")
+    if operation == '1':
+        result = num1 + num2
+    elif operation == '2':
+        result = num1 - num2
+    elif operation == '3':
+        result = num1 * num2
+    elif operation == '4':
+        if num2 == 0:
+            result = "Error! Division by zero."
+        else:
+            result = num1 / num2
     else:
-        print("Invalid input")
-
-
+        result = "Invalid input! Please select a valid operation."
+    print(f"Result: {result}")
 calculator()
+    
